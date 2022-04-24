@@ -12,6 +12,13 @@
 --Desaturated_Dark_Blue: hsl(214, 17%, 51%);
 --Grayish_Blue: hsl(212, 23%, 69%);
 --Light_Grayish_Blue: hsl(210, 46%, 95%);
+
+/* Widths */
+--container-width: 320px;
+--section_preview_main_width: 258px;
+
+/* Heights */
+--footer_height: 60px;
 }
 
 body {
@@ -28,58 +35,68 @@ main {
 }
 
 div.preview-container {
-    width: 360px;
+    width: var(--container-width);
     background-color: var(--Light_Grayish_Blue);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 15px;
-    margin: 5rem 0;
+    margin: 5rem 0 3rem;
 }
 
-.preview-container header,
+.preview-container header {
+    position: relative;
+    height: 190px;
+    width: 100%;
+    overflow: hidden;
+}
+
 .preview-container header img {
+    width: var(--container-width);
+    position: absolute;
+    top: -20px;
+}
+
+.preview-container header {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 
-/* .preview-container header {} */
-
-.preview-container header img {
-    width: 100%;
-}
-
 section#preview-main {
-    width: 310px;
+    width: var(--section_preview_main_width);
+    margin-bottom: 20px;
 }
 
 section#preview-main h1.heading {
     color: var(--Very_Dark_Grayish_Blue);
+    font-size: 1rem;
     margin-top: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.1rem;
 }
 
 section#preview-main p.description {
     color: var(--Grayish_Blue);
+
 }
 
 /* Footer */
 div.preview-container footer {
     width: 100%;
+    height: var(--footer_height);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 div.preview-container footer .author {
-    width: 300px;
+    width: var(--section_preview_main_width);
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
-    height: 75px;
 }
 
 .author .avatar img {
@@ -113,15 +130,17 @@ div.preview-container footer .author {
     background-color: var(--Very_Dark_Grayish_Blue);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    padding: 20px 0;
-    width: 100%;
-    /* display: flex;
+    width: var(--container-width);
+    height: 100%;
+    display: flex;
     flex-direction: row;
-    justify-content: center; */
+    justify-content: space-between;
+    align-items: center;
 }
 .share .options {
-    width: 300px;
-    margin: auto;
+    width: var(--section_preview_main_width);
+    height: 100%;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -149,13 +168,13 @@ div.preview-container footer .author {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     background-color: var(--Desaturated_Dark_Blue);
 }
 
 
-footer {
+footer#main {
     padding: 10px 0;
 }
 
