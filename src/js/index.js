@@ -37,8 +37,8 @@ shareOptionsDesktop.style.display = "none";
 let shareOptionsDesktopIsVisible = false;
 
 const btnDesktop = document.querySelector(".share-btn.desktop");
-const iconNormal = document.querySelector(".share-btn.desktop #icon-share");
-const iconInverted = document.querySelector(".share-btn.desktop #icon-share-inverted");
+const iconNormal = document.querySelector(".share-btn.desktop .icon-share");
+const iconInverted = document.querySelector(".share-btn.desktop .icon-share-inverted");
 
 const showShareOptions = () => {
     shareOptionsDesktop.style.display = "block";
