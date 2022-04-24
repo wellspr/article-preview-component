@@ -81,7 +81,6 @@ section#preview-main h1.heading {
 
 section#preview-main p.description {
     color: var(--Grayish_Blue);
-
 }
 
 /* Footer */
@@ -130,6 +129,10 @@ div.preview-container footer .author {
     cursor: pointer;
 }
 
+.author .share-btn.desktop {
+    display: none;
+}
+
 .share {
     background-color: var(--Very_Dark_Grayish_Blue);
     border-bottom-left-radius: 15px;
@@ -175,6 +178,121 @@ div.preview-container footer .author {
     width: 30px;
     height: 30px;
     background-color: var(--Desaturated_Dark_Blue);
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    div.preview-container {
+        width: 740px;
+        height: 300px;
+        position: relative;
+    }
+
+    div.preview-container header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 306px;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 0;
+    }
+
+    div.preview-container header img {
+        position: relative;
+        top: 0;
+        width: auto;
+        height: auto;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    div.preview-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    section#preview-main, div.preview-container footer {
+        width: 350px;
+        margin: 0;
+        margin-right: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    section#preview-main h1.heading {
+        margin: 0;
+        margin: 15px 0;
+        font-size: 20px;
+    }
+
+    div.preview-container footer .author{
+        width: 100%;
+    }
+
+    .author .share-btn.mobile {
+        display: none;
+    }
+    .author .share-btn.desktop {
+        display: flex;
+    }
+    #icon-share-inverted {
+        display: none;
+    }
+
+    .clicked {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        background-color: var(--Desaturated_Dark_Blue);
+        cursor: pointer;
+    }
+    
+    .share {
+        position: absolute;
+        width: 250px;
+        height: 60px;
+        border-radius: 15px;
+        left: 556px;
+        top: 130px;
+    }
+
+    .share::after {
+        content: " ";
+        position: absolute;
+        top: 100%; /* At the bottom of the tooltip */
+        left: 50%;
+        margin-left: -15px;
+        border-width: 15px;
+        border-style: solid;
+        border-color: var(--Very_Dark_Grayish_Blue) transparent transparent transparent;
+      }
+
+    .share .options {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .share .options .share-icons {
+        flex-grow: 0;
+    }
+
+    .share .options .share-icons img:nth-child(3) {
+        margin: 0;
+    }
+
+    .share .options .share-btn {
+        display: none;
+    }
+
 }
 
 

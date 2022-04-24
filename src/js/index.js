@@ -1,24 +1,73 @@
-const shareOptions = document.querySelector(".share");
-shareOptions.style.display = "none";
-let shareOptionsIsVisible = false;
+const shareOptionsMobile = document.querySelector(".share");
+shareOptionsMobile.style.display = "none";
+let shareOptionsMobileIsVisible = false;
 
 const authorDetails = document.querySelector(".author");
 
-const btns = document.querySelectorAll(".share-btn");
+const btnsMobile = document.querySelectorAll(".share-btn.mobile");
+
+const showShareOptionsMobile = () => {
+    shareOptionsMobile.style.display = "block";
+    authorDetails.style.display = "none";
+    shareOptionsMobileIsVisible = true;
+};
+
+const hideShareOptionsMobile = () => {
+    shareOptionsMobile.style.display = "none";
+    authorDetails.style.display = "flex";
+    shareOptionsMobileIsVisible = false;
+};
 
 const toggleShareVisibility = () => {
-    if (!shareOptionsIsVisible) {
-        shareOptions.style.display = "block";
-        authorDetails.style.display = "none";
-        shareOptionsIsVisible = true;
+    if (!shareOptionsMobileIsVisible) {
+        showShareOptionsMobile();
     }
     else {
-        shareOptions.style.display = "none";
-        authorDetails.style.display = "flex";
-        shareOptionsIsVisible = false;
+        hideShareOptionsMobile();
     }
 };
 
-Object.values(btns).map(btn => {
+Object.values(btnsMobile).map(btn => {
     btn.addEventListener("click", toggleShareVisibility)
+});
+
+// Desktop
+const shareOptionsDesktop = document.querySelector(".share");
+shareOptionsDesktop.style.display = "none";
+let shareOptionsDesktopIsVisible = false;
+
+const btnDesktop = document.querySelector(".share-btn.desktop");
+const iconNormal = document.querySelector(".share-btn.desktop #icon-share");
+const iconInverted = document.querySelector(".share-btn.desktop #icon-share-inverted");
+
+const showShareOptions = () => {
+    shareOptionsDesktop.style.display = "block";
+    iconInverted.style.display = "flex";
+    btnDesktop.classList.add("clicked");
+    iconNormal.style.display = "none";
+    shareOptionsDesktopIsVisible = true;
+};
+
+const hideShareOptions = () => {
+    shareOptionsDesktop.style.display = "none";
+    iconInverted.style.display = "none";
+    btnDesktop.classList.remove("clicked");
+    iconNormal.style.display = "flex";
+    shareOptionsDesktopIsVisible = false;
+};
+
+const toggleShareVisibilityDesktop = () => {
+    if (!shareOptionsDesktopIsVisible) {
+        showShareOptions();
+    }
+    else {
+        hideShareOptions();
+    }
+};
+
+btnDesktop.addEventListener("click", toggleShareVisibilityDesktop);
+
+window.addEventListener("resize", () => {
+    hideShareOptions();
+    hideShareOptionsMobile()
 });
