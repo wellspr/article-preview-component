@@ -18,7 +18,7 @@
 --section_preview_main_width: 258px;
 
 /* Heights */
---footer_height: 60px;
+--footer_height: 75px;
 }
 
 body {
@@ -46,6 +46,7 @@ div.preview-container {
     justify-content: center;
     border-radius: 15px;
     margin: 5rem 0 3rem;
+    box-shadow: 0px 20px 50px -10px var(--Grayish_Blue);
 }
 
 .preview-container header {
