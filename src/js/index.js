@@ -67,7 +67,10 @@ const toggleShareVisibilityDesktop = () => {
 
 btnDesktop.addEventListener("click", toggleShareVisibilityDesktop);
 
-window.addEventListener("resize", () => {
+
+const hideOptions = () => {
     hideShareOptions();
     hideShareOptionsMobile()
-});
+};
+
+window.addEventListener("resize", hideOptions);
